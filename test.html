@@ -1,17 +1,17 @@
-<!‐‐ mark the div to show "name" here ‐‐>
-<div show‐info="name"></div>
-<!‐‐ and age here ‐‐>
-<div show‐info="age"></div>
-<script>
-// the code finds an element with the mark and shows what's requested
-let user = {
-name: "Pete",
-age: 25
-};
-for(let div of document.querySelectorAll('[show‐info]')) {
-// insert the corresponding info into the field
-let field = div.getAttribute('show‐info');
-alert(field);
-div.innerHTML = user[field]; // Pete, then age
-}
-</script>
+<!DOCTYPE html>
+<html>
+<body>
+
+  <div data-widget-name="menu">Choose the genre</div>
+
+  <script>
+    // getting it
+    let diva = document.body.firstChild.nextSibling;
+    console.log(diva);
+
+    // reading the value
+    alert(diva.dataset.widgetName);
+    
+  </script>
+</body>
+</html>
