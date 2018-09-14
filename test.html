@@ -51,32 +51,156 @@
       <td>5:5</td>
     </tr>
   </table>
+  <a href="http://example.com/file.zip">...</a>
+<a href="http://ya.ru">...</a>
+
+<html><head></head><body cz-shortcut-listen="true">
+    <form name="search">
+      <label>Search the site:
+        <input type="text" name="search">
+      </label>
+      <input type="submit" value="Search!">
+    </form>
+  
+    <hr>
+  
+    <form name="search-person">
+      Search the visitors:
+      <table id="age-table">
+        <tbody><tr>
+          <td>Age:</td>
+          <td id="age-list">
+            <label>
+              <input type="radio" name="age" value="young">less than 18</label>
+            <label>
+              <input type="radio" name="age" value="mature">18-50</label>
+            <label>
+              <input type="radio" name="age" value="senior">more than 50</label>
+          </td>
+        </tr>
+  
+        <tr>
+          <td>Additionally:</td>
+          <td>
+            <input type="text" name="info[0]">
+            <input type="text" name="info[1]">
+            <input type="text" name="info[2]">
+          </td>
+        </tr>
+  
+      </tbody></table>
+  
+      <input type="submit" value="Search!">
+    </form>
+  
+    <!DOCTYPE HTML>
+<html>
+<body>
+
+  <ul>
+    <li>Animals
+      <ul>
+        <li>Mammals
+          <ul>
+            <li>Cows</li>
+            <li>Donkeys</li>
+            <li>Dogs</li>
+            <li>Tigers</li>
+          </ul>
+        </li>
+        <li>Other
+          <ul>
+            <li>Snakes</li>
+            <li>Birds</li>
+            <li>Lizards</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Fishes
+      <ul>
+        <li>Aquarium
+          <ul>
+            <li>Guppy</li>
+            <li>Angelfish</li>
+          </ul>
+        </li>
+        <li>Sea
+          <ul>
+            <li>Sea trout</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
   <script>
-    let table = document.body.firstElementChild;
-    let tr = Array.from(table.rows)
-    // console.log(tr);
-    // console.log(tr[0].cells);
-    // tr.forEach(child =>           console.log(child)
-    // )
-    for(let i = 0; i < tr.length; i++){
-      let tds = Array.from(tr[i].cells);
-      console.log(tr)
-      console.log(tds);
-      console.log(i);
-      // console.log(tds.children)
-      for(td of tds){
-      //  let redtd = tds.filter(td => td.cellIndex == i);
-      //  console.log("-----")
-      //  console.log(redtd.cellIndex);
-      if(td.cellIndex === i){
-        console.log(td);
-        td.style.backgroundColor = "red";
-        }
-      }
+    for (let li of document.querySelectorAll('li')) {
+      // get the title from the text node
+      let title = li.firstChild.data;
+      title = title.trim(); // remove extra spaces from ends
+      // get the descendants count
+      let count = li.getElementsByTagName('li').length;
+      alert(title + ': ' + count);
     }
 
+  </script>
+
+</body>
+</html>
   
-    // your code
+  </body>
+  
+  </html>
+
+
+  <script>
+    let ageTable = document.getElementById('age-table');
+    console.log(ageTable);
+    console.log(ageTable.getElementsByTagName('label'));
+
+    let form = document.getElementsByName('search')[0];
+    console.log(form);
+    let searchInput = form.querySelector('input');
+    console.log(searchInput);
+
+    let inputs = form.querySelectorAll('input');
+    let lastInput = inputs[inputs.length - 1 ];
+    console.log(lastInput);
+
+
+
+    // for (let elem of document.body.children) {
+    //   // matches css selector can be useful!
+    //   if (elem.matches('a[href$="zip"]')) {
+    //   // alert("The archive reference: " + elem.href );
+    //   }
+    // }
+    // let table = document.body.firstElementChild;
+    // let tr = Array.from(table.rows)
+    // // console.log(tr);
+    // // console.log(tr[0].cells);
+    // // tr.forEach(child =>           console.log(child)
+    // // )
+    // for(let i = 0; i < tr.length; i++){
+    //   let tds = Array.from(tr[i].cells);
+    //   console.log(tr)
+    //   console.log(tds);
+    //   console.log(i);
+    //   // console.log(tds.children)
+    //   for(td of tds){
+    //   //  let redtd = tds.filter(td => td.cellIndex == i);
+    //   //  console.log("-----")
+    //   //  console.log(redtd.cellIndex);
+    //   if(td.cellIndex === i){
+    //     console.log(td);
+    //     td.style.backgroundColor = "red";
+    //     }
+    //   }
+    // }
+    // let tdsf = document.getElementsByTagName('td');
+    // console.log(tdsf);
+
   </script>
 </body>
 </html>
