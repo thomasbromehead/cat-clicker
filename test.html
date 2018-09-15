@@ -2,23 +2,15 @@
 <html>
 <body>
 
-  <ol id="elem">
-    <li>Hello</li>
-    <li>World</li>
-  </ol>
-  
+    <ul id="ul">
+        <li id="one">1</li>
+        <li id="two">4</li>
+      </ul>
+  </body>
+
   <script>
-    function clear(elem) { 
-      let lis = document.querySelectorAll('#elem > li')
-      for(li of lis){
-        elem.removeChild(li);
-      }
 
-      // elem.remove
+    one.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
 
-     }
-  
-    clear(elem); // clears the list
   </script>
-</body>
 </html>
