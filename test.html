@@ -2,24 +2,23 @@
 <html>
 <body>
 
-  <div id="first">First</div>
-  <div id="second">Second</div>
-  <button onclick="swap()">Swap both</button>
-  <script>
-  // no need to call remove
-  swap = () =>  {
+  <ol id="elem">
+    <li>Hello</li>
+    <li>World</li>
+  </ol>
   
-    if(first.nextSibling == second){
-      second.after(first);// take #second and after it ‐ insert #first
-    } else {
-      first.after(second);
-    }
-  }
-  // if (document.readyState == "loading"){
-  //   alert('page loading!');
-  // }
+  <script>
+    function clear(elem) { 
+      let lis = document.querySelectorAll('#elem > li')
+      for(li of lis){
+        elem.removeChild(li);
+      }
 
+      // elem.remove
 
+     }
+  
+    clear(elem); // clears the list
   </script>
 </body>
 </html>
